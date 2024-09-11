@@ -15,11 +15,8 @@ import expression.Program;
 
 public class ExpressionApp {
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.err.println("Error : file name");
-            return;
-        }
-        String fileName = args[0];
+        
+        String fileName = "D:/Mini-Project/AntlrExample/src/tests/test.txt";
         ExprParser parser = getParser(fileName);
 
         // build a parse tree

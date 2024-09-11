@@ -1,6 +1,5 @@
 package expression;
 
-
 import java.util.*;
 public class ExpressionProcessor {
     List<Expression> list;
@@ -21,7 +20,7 @@ public class ExpressionProcessor {
             } else {
                 String input = e.toString();
                 int result = getResult(e);
-                evaluationResult.add(input + "is" + result);
+                evaluationResult.add(input + " is " + result);
             }
         }
         return evaluationResult;
@@ -40,8 +39,8 @@ public class ExpressionProcessor {
 
             result = getResult(left) + getResult(right);
         } else {
-            Expression left = ((Addition)e).left;
-            Expression right = ((Addition)e).right;
+            Expression left = ((Multiplication)e).left;
+            Expression right = ((Multiplication)e).right;
 
             result = getResult(left) * getResult(right);
         }
