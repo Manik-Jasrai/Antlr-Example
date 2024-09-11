@@ -30,9 +30,14 @@ public class ExpressionApp {
             // No errors
             ExpressionProcessor processor = new ExpressionProcessor(prog.expressions);
             List<String> results = processor.getEvaluationResults();
-
-            for(String res : results) {
-                System.out.println(res);
+            if (processor.runtimeErrors.isEmpty()) {            	
+            	for(String res : results) {
+            		System.out.println(res);
+            	}
+            } else {
+            	for (String err : processor.runtimeErrors) {
+            		System.err.println(err);
+            	}
             }
         } else {
             for(String err : progVisitor.semanticErrors) {
